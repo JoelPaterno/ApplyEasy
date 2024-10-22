@@ -1,5 +1,5 @@
-from sqlalchemy import DeclarativeBase, String, ForeignKey, func
-from sqlalchemy.orm import Mapped, mapped_column, relationship
+from sqlalchemy import String, ForeignKey, func
+from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column, relationship
 from typing import List
 import datetime
 #The models defined correpond to database tables. the CRUD operations are handled in the dal.py file. 
@@ -157,7 +157,7 @@ class Resume(Base):
     job_application: Mapped["JobApplication"] = relationship(back_populates="resume")
 
 class CoverLetter(Base):
-    __tabelename__ = "cover_letters"
+    __tablename__ = "cover_letters"
 
     id: Mapped[int] = mapped_column(primary_key=True)
     name: Mapped[str] = mapped_column(String(100), nullable=False)

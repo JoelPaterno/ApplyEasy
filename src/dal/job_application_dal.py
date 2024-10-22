@@ -1,8 +1,8 @@
-from sqlalchemy.orm import Session
+from sqlalchemy.orm import session
 from database.models import Person, ResumeData, CoverLetterData
 
 #CRUD + Get JobApplication methods
-def create_job_application(session: Session, personId: int, resume_data: ResumeData, cover_letter_data: CoverLetterData):
+def create_job_application(personId: int, resume_data: ResumeData, cover_letter_data: CoverLetterData):
     """
     Create a new job application in the database.
 
@@ -17,7 +17,7 @@ def create_job_application(session: Session, personId: int, resume_data: ResumeD
     """
     pass
 #CRUD + Get CoverLetterData methods
-def create_cover_letter_data(session: Session, resume_data: ResumeData):
+def create_cover_letter_data(resume_data: ResumeData):
     """
     Generate a new cover letter data object.
 
@@ -31,7 +31,7 @@ def create_cover_letter_data(session: Session, resume_data: ResumeData):
     pass
 
 #CRUD + Get Resume methods
-def create_resume(session: Session, job_application: Person, name: str, path: str):
+def create_resume(job_application: Person, name: str, path: str):
     """
     Create a new resume in the database.
 
@@ -49,7 +49,7 @@ def create_resume(session: Session, job_application: Person, name: str, path: st
     pass
 
 #CRUD + Get CoverLetter methods
-def create_cover_letter(session: Session, person: Person, name: str, path: str):
+def create_cover_letter(person: Person, name: str, path: str):
     
     """
     Create a new cover letter in the database.
